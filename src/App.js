@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import CellUI from './Components/CellUI'
+import Grid from './Classes/Grid'
 
-function App() {
+const grid = new Grid()
+
+function App () {
+  function play () {
+    console.log('play')
+  }
+
+  function changeCell (cell) {
+    console.log(cell)
+  }
+  console.log(grid)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <button onClick={play}>Play</button>
+      <div className='grid'>
+        {grid.cells.flat().map((cell, i) => <CellUI onChangeCell={changeCell} cell={cell} key={i} num={i} />)}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

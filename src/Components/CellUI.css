@@ -1,0 +1,12 @@
+.Cell {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.alive {
+  background-color: red;
+}
+
+.dead {
+  background-color: gray;
+}
